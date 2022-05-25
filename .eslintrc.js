@@ -19,6 +19,7 @@ module.exports = {
     'react'
   ],
   rules: {
+    'react/prop-types': 'off'
   },
   ignorePatterns: ['/api'],
   parser: '@babel/eslint-parser'
