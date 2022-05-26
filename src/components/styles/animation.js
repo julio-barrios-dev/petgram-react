@@ -15,3 +15,17 @@ const fadeInkeyFrames = keyframes`
     opacity: 1;
   }
 `
+
+export const down = ({ time = '.2s', type = 'ease' } = {}) =>
+  css`animation: ${time} ${downKeyFrames} ${type};
+      animation-fill-mode: forwards;
+      `
+
+const downKeyFrames = keyframes`
+  from {
+    top: -40px;
+  }
+  to {
+    top: -20px
+  }
+`
