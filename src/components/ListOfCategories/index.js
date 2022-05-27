@@ -1,27 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Category } from '../Category'
-
 import { List, Item } from './styles'
 
-function useCategoriesData () {
-  const [categories, setCategories] = useState([1, 2, 3, 4, 5])
-  const [loading, setLoading] = useState(false)
+import { useFetchData } from '../../hooks/useFetchData'
 
-  useEffect(() => {
-    setLoading(true)
-    fetch('https://petgram-server-juliobc.vercel.app/categories')
-      .then(res => res.json())
-      .then(response => {
-        setCategories(response)
-        setLoading(false)
-      })
-  }, [])
-
-  return { categories, loading }
-}
+const API = 'https://petgram-server-juliobc.vercel.app/categories'
 
 export const ListOfCategories = () => {
-  const { categories, loading } = useCategoriesData()
+  const { data, loading } = useFetchData(API)
 
   const [showFixed, setShowFixed] = useState(false)
 
@@ -41,9 +27,9 @@ export const ListOfCategories = () => {
     <List fixed={fixed}>
       {
         loading
-          ? categories.map((num, index) => <Item key={index} ><Category loading={true} /></Item>)
-          : categories.map((category) =>
-          <Item key={category.id}><Category key={category.id} {...category} /></Item>)
+          ? data.map((num, index) => <Item key={index} ><Category loading={true} /></Item>)
+          : data.map((category) =>
+          <Item key={category.id}><Category {...category} /></Item>)
       }
     </List>
   )
