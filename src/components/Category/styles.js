@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro'
+import styled, { keyframes } from 'styled-components/macro'
 
 export const Anchor = styled.a`
   display: flex;
@@ -15,4 +15,24 @@ export const Image = styled.img`
   object-fit: cover;
   height: 75px;
   width: 75px;
+`
+const backgroundKeyframes = keyframes`
+  from {
+    background-position: -100px;
+  }
+  to {
+    background-position: 100px;    
+  }
+`
+export const Loading = styled.div`
+  background: linear-gradient(to right, #eeeeee 8%, #bbbbbb 18%, #eeeeee 33%);
+  background-size: 300px;
+  border: 1px solid #ddd;
+  box-shadow: 0 10px 14px rgba(0, 0, 0, .2);
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  height: 75px;
+  width: 75px;
+  animation: ${backgroundKeyframes} 1s linear infinite;
 `

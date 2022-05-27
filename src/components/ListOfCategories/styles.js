@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro'
+import styled, { css } from 'styled-components/macro'
 import { fadeIn, down } from '../styles/animation'
 
 export const List = styled.ul`
@@ -8,7 +8,8 @@ export const List = styled.ul`
   &::-webkit-scrollbar {
     display: none;
   }
-  &.fixed {
+  ${props => props.fixed && css`
+  {
     /* ${fadeIn()} */
     ${down()}
     background: #fff;
@@ -24,6 +25,8 @@ export const List = styled.ul`
     z-index: 1;
 
   }
+  `}
+  
   &:hover {
     cursor: pointer;
   }
