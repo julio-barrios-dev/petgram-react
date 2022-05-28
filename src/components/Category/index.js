@@ -1,15 +1,15 @@
 import React from 'react'
-import { Anchor, Image, Loading } from './styles'
+import { Link, Image, Loading } from './styles'
 
-export const Category = ({ cover, path, emoji = '?', loading = false }) => {
+export const Category = ({ cover, path = '#', emoji = '?', loading = false }) => {
   if (loading) {
-    return <Anchor href={path}>
+    return <Link to={path}>
              <Loading />
              {emoji}
-           </Anchor>
+           </Link>
   }
-  return <Anchor href={path}>
+  return <Link to={path}>
            <Image src={cover} />
            {emoji}
-         </Anchor>
+         </Link>
 }

@@ -1,6 +1,7 @@
 import styled, { keyframes } from 'styled-components/macro'
+import { Link as LinkRouter } from 'react-router-dom'
 
-export const Anchor = styled.a`
+export const Link = styled(LinkRouter)`
   display: flex;
   flex-direction: column;
   text-align: center;

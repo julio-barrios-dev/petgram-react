@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components/macro'
-import { fadeIn, down } from '../styles/animation'
+import { fadeIn, down } from '../../styles/animation'
 
 export const List = styled.ul`
   display: flex;
