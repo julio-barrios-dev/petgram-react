@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
+import { AppProvider } from './AppProvider'
 import { App } from './App'
 
 const client = new ApolloClient({
@@ -11,7 +12,9 @@ const rootElement = document.getElementById('app')
 const root = ReactDOM.createRoot(rootElement)
 
 root.render(
-  <ApolloProvider client={client}>
-    <App />
-  </ApolloProvider>
+  <AppProvider >
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
+  </AppProvider>
 )
