@@ -6,8 +6,10 @@ import { useRegisterMutation } from '../hooks/RegisterMutation'
 
 export const NotRegisterUser = () => {
   const { onLogin } = useContext(Context)
-  const { registerMutation } = useRegisterMutation()
+  const { registerMutation, data, loading, error } = useRegisterMutation()
   const navigate = useNavigate()
+
+  console.log({ data, loading, error })
 
   const submitLogin = ({ email, password }) => {
     const input = { email, password }
@@ -17,17 +19,18 @@ export const NotRegisterUser = () => {
         onLogin()
         navigate('/user')
       })
-
-    // onLogin()
   }
   const handleSubmit = (e) => {
     onLogin()
     navigate('/user')
   }
+
+  const errMessage = error && 'El usuario ya existe o algo salió mal'
+
   return (
     <>
       <div>
-        <UseForm onSubmit={submitLogin} title={'Registrarse'} />
+        <UseForm disabled={loading} error={errMessage} onSubmit={submitLogin} title={'Registrarse'} />
       </div>
       <div>
         <UseForm onSubmit={handleSubmit} title={'Iniciar Sesión'} />
