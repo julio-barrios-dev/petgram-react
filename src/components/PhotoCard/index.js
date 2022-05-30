@@ -9,7 +9,7 @@ import { FavButton } from '../FavButton'
 export const PhotoCard = ({ id, likes = 0, src, liked } = {}) => {
   const [show, element] = useNearScreen()
   const key = `like-${id}`
-  const [photoLiked, setPhotoLiked] = useLocalStorage(key, false)
+  const [photoLiked, setPhotoLiked] = useLocalStorage(key, liked)
   const { mutation } = useMutationToogleLike()
 
   const showCard = () => {
