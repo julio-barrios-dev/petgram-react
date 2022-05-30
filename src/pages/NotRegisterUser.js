@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Context from '../Context'
+import { UseForm } from '../components/UserForm'
 
 export const NotRegisterUser = () => {
   const { onLogin } = useContext(Context)
@@ -10,12 +11,14 @@ export const NotRegisterUser = () => {
     onLogin()
     navigate('/user')
   }
-
   return (
-    <div>
-      <form onSubmit={handleSubmit} >
-        <button>iniciar Sesión</button>
-      </form>
-    </div>
+    <>
+      <div>
+        <UseForm onSubmit={handleSubmit} title={'Registrarse'} />
+      </div>
+      <div>
+        <UseForm onSubmit={handleSubmit} title={'Iniciar Sesión'} />
+      </div>
+    </>
   )
 }
