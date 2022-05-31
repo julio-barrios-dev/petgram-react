@@ -12,7 +12,6 @@ import Context from './Context'
 
 export const App = () => {
   const { state: { isAuth } } = useContext(Context)
-  console.log(isAuth())
   return (
     <>
       <BrowserRouter>
