@@ -12,8 +12,7 @@ import Context from './Context'
 
 export const App = () => {
   const { state: { isAuth } } = useContext(Context)
-  console.log(isAuth)
-
+  console.log(isAuth())
   return (
     <>
       <BrowserRouter>
@@ -23,8 +22,8 @@ export const App = () => {
               <Route path='/' element={<Home />} />
               <Route path='/pet/:id' element={<Home />} />
               <Route path='/detail/:detailId' element={<Detail/>} />
-              <Route path='/favs' element={isAuth ? <Favs /> : <Navigate to='/NotRegisterUser' /> } />
-              <Route path='/user' element={isAuth ? <User /> : <Navigate to='/NotRegisterUser' /> } />
+              <Route path='/favs' element={isAuth() ? <Favs /> : <Navigate to='/NotRegisterUser' /> } />
+              <Route path='/user' element={isAuth() ? <User /> : <Navigate to='/NotRegisterUser' /> } />
               <Route path='/NotRegisterUser' element={<NotRegisterUser />} />
         </Routes>
         <NavBar />

@@ -2,7 +2,7 @@ import { useReducer } from 'react'
 
 export const useProvider = () => {
   const initialState = {
-    isAuth: false
+    isAuth: () => (window.sessionStorage.getItem('token'))
   }
 
   const reducer = (state, action) => {
@@ -10,7 +10,7 @@ export const useProvider = () => {
       case 'LOGIN':
         return {
           ...state,
-          isAuth: true
+          session: window.sessionStorage.setItem('token', action.payload)
         }
 
       default:
@@ -22,7 +22,7 @@ export const useProvider = () => {
 
   const [state, dispatch] = useReducer(reducer, initialState)
 
-  const onLogin = () => dispatch({ type: 'LOGIN' })
+  const onLogin = (token) => dispatch({ type: 'LOGIN', payload: token })
 
   return {
     state,

@@ -16,8 +16,9 @@ export const NotRegisterUser = () => {
     const input = { email, password }
     const variable = { input }
     registerMutation({ variables: variable })
-      .then(() => {
-        onLogin()
+      .then(({ data }) => {
+        const { signup } = data
+        onLogin(signup)
         navigate('/user')
       })
   }
@@ -25,8 +26,9 @@ export const NotRegisterUser = () => {
     const input = { email, password }
     const variable = { input }
     loginMutation({ variables: variable })
-      .then(() => {
-        onLogin()
+      .then(({ data }) => {
+        const { login } = data
+        onLogin(login)
         navigate('/user')
       })
   }
