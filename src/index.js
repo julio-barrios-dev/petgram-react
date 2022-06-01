@@ -35,9 +35,9 @@ const rootElement = document.getElementById('app')
 const root = ReactDOM.createRoot(rootElement)
 
 root.render(
-  <AppProvider >
     <ApolloProvider client={client}>
-      <App />
+      <AppProvider >
+        <App />
+      </AppProvider>
     </ApolloProvider>
-  </AppProvider>
 )

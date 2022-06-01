@@ -6,7 +6,7 @@ import { useFetchData } from '../../hooks/useFetchData'
 
 const API = 'https://petgram-server-juliobc.vercel.app/categories'
 
-export const ListOfCategories = () => {
+const ListOfCategoriesComponent = () => {
   const { data, loading } = useFetchData(API)
 
   const [showFixed, setShowFixed] = useState(false)
@@ -40,3 +40,5 @@ export const ListOfCategories = () => {
     </>
   )
 }
+
+export const ListOfCategories = React.memo(ListOfCategoriesComponent)

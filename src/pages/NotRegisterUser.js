@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Context from '../Context'
 import { UseForm } from '../components/UserForm'
+import { Layout } from '../components/Layout'
 import { useRegisterMutation } from '../hooks/useRegisterMutation'
 import { useLoginMutation } from '../hooks/useLoginMutation'
 
@@ -41,13 +42,13 @@ export const NotRegisterUser = () => {
     : ''
 
   return (
-    <>
+    <Layout title='Hola!' subtitle='Registrate o inicia sesión' >
       <div>
         <UseForm disabled={registerLoading} error={errMessageRegister} onSubmit={submitLogin} title={'Registrarse'} />
       </div>
       <div>
         <UseForm disabled={loginLoading} error={errMessageLogin} onSubmit={handleSubmit} title={'Iniciar Sesión'} />
       </div>
-    </>
+    </Layout>
   )
 }

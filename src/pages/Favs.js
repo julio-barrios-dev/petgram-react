@@ -1,11 +1,13 @@
 import React from 'react'
 import { ListOfFavorite } from '../components/ListOfFavs'
+import { Layout } from '../components/Layout'
 
-export const Favs = () => {
-  return (
-    <div>
-      <h1>Favs</h1>
+export default () => (
+    <Layout
+      title='Tus favoritos'
+      content='Aqui puedes encontrar tus favoritos'
+      subtitle='Aqui puedes encontrar tus favoritos'
+      >
       <ListOfFavorite />
-    </div>
-  )
-}
+    </Layout>
+)

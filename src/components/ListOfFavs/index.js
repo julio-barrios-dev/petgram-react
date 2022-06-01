@@ -3,7 +3,6 @@ import { useGetFavorite } from '../../hooks/useGetFavorite'
 import { Link, Grid, Img } from './styles'
 
 export const ListOfFavorite = () => {
-  // debugger
   const { loading, error, data } = useGetFavorite()
 
   if (loading) return <p>Loading...</p>
