@@ -8,7 +8,7 @@
     "lint": "eslint . --fix",
     "build": "webpack",
     "dev": "webpack serve --mode development",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress open"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "@svgr/webpack": "^6.2.1",
     "babel-loader": "^8.2.5",
     "babel-plugin-macros": "^3.1.0",
+    "cypress": "^10.0.0",
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard": "^17.0.0",
@@ -42,12 +43,15 @@
     "standard": "^17.0.0",
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.9.0"
+    "webpack-dev-server": "^4.9.0",
+    "webpack-pwa-manifest": "^4.3.0",
+    "workbox-webpack-plugin": "^6.5.3"
   },
   "dependencies": {
     "@apollo/client": "^3.6.5",
     "@babel/preset-react": "^7.17.12",
     "graphql": "^16.5.0",
+    "prop-types": "^15.8.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",

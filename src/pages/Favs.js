@@ -2,7 +2,7 @@ import React from 'react'
 import { ListOfFavorite } from '../components/ListOfFavs'
 import { Layout } from '../components/Layout'
 
-export default () => (
+const Favs = () => (
     <Layout
       title='Tus favoritos'
       content='Aqui puedes encontrar tus favoritos'
@@ -11,3 +11,5 @@ export default () => (
       <ListOfFavorite />
     </Layout>
 )
+
+export default Favs

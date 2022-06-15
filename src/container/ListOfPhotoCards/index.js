@@ -12,7 +12,7 @@ const render = ({ categoryId }) => {
   }
   return (
     <ul>
-      {data.photos.map(photo => (<PhotoCard key={photo.id} {...photo}/>))}
+      {data.photos.map(photo => (<PhotoCard key={photo.id} likes= {-1} {...photo}/>))}
     </ul>
   )
 }

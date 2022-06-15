@@ -43,12 +43,8 @@ export const NotRegisterUser = () => {
 
   return (
     <Layout title='Hola!' subtitle='Registrate o inicia sesión' >
-      <div>
-        <UseForm disabled={registerLoading} error={errMessageRegister} onSubmit={submitLogin} title={'Registrarse'} />
-      </div>
-      <div>
-        <UseForm disabled={loginLoading} error={errMessageLogin} onSubmit={handleSubmit} title={'Iniciar Sesión'} />
-      </div>
+      <UseForm disabled={registerLoading} error={errMessageRegister} onSubmit={submitLogin} title={'Registrarse'} />
+      <UseForm disabled={loginLoading} error={errMessageLogin} onSubmit={handleSubmit} title={'Iniciar Sesión'} />
     </Layout>
   )
 }
