@@ -9,7 +9,8 @@ export const useProvider = () => {
       if (window.sessionStorage.getItem('token') !== null) {
         return true
       }
-    }
+    },
+    showAlert: false
   }
 
   const reducer = (state, action) => {
@@ -26,6 +27,12 @@ export const useProvider = () => {
           ...state
 
         }
+      case 'ALERT':
+        return {
+          showAlert: true,
+          ...state
+
+        }
       default:
         return {
           ...state
@@ -37,10 +44,12 @@ export const useProvider = () => {
 
   const onLogin = (token) => dispatch({ type: 'LOGIN', payload: token })
   const onLogout = () => dispatch({ type: 'LOGOUT' })
+  const onAlert = () => dispatch({ type: 'ALERT' })
 
   return {
     state,
     onLogin,
-    onLogout
+    onLogout,
+    onAlert
   }
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { PhotoCard } from '../../components/PhotoCard'
 import { useGetByCategoryPhotos } from '../../hooks/useGetByCategoryPhotos'
+import { ListPhoto } from './styles'
 
 const render = ({ categoryId }) => {
   const { loading, error, data } = useGetByCategoryPhotos({ categoryId })
@@ -11,9 +12,9 @@ const render = ({ categoryId }) => {
     return <h2>Error</h2>
   }
   return (
-    <ul>
+    <ListPhoto>
       {data.photos.map(photo => (<PhotoCard key={photo.id} likes= {-1} {...photo}/>))}
-    </ul>
+    </ListPhoto>
   )
 }
 

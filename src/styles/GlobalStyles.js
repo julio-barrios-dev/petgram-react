@@ -12,6 +12,7 @@ export const GlobalStyles = createGlobalStyle`
         
         ul, li, h1, h2, h3, p, button {
                 margin: 0;
+                padding: 0;
         }
 
         ul {
@@ -38,5 +39,6 @@ export const GlobalStyles = createGlobalStyle`
                 overflow-x: hidden;
                 min-height: 100vh;
                 padding-bottom: 10px;
+                position: relative;
         }
 `

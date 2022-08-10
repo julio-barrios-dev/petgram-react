@@ -1,10 +1,18 @@
 import styled, { css } from 'styled-components/macro'
 import { fadeIn, down } from '../../styles/animation'
 
+export const ContainerListCategory = styled.div`
+  position: relative;
+`
+
 export const List = styled.ul`
   display: flex;
   overflow: scroll;
+  scroll-snap-type: x mandatory;
   width: 100%;
+  margin: 30px 0;
+  cursor: -webkit-grab; 
+  cursor: grab;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -27,11 +35,23 @@ export const List = styled.ul`
   }
   `}
   
-  &:hover {
-    cursor: pointer;
-  }
 `
-
 export const Item = styled.li`
   padding: 0 8px;
+`
+export const ButtonRight = styled.button`
+  position: absolute;
+  font-size: 30px;
+  color: #ffffffed;
+  height: 100%;
+  top: 0;
+  right: 10px;
+`
+export const ButtonLeft = styled.button`
+  position: absolute;
+  font-size: 30px;
+  color: #ffffffed;
+  height: 100%;
+  top: 0;
+  left: 10px;
 `

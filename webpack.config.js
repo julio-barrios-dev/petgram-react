@@ -59,7 +59,8 @@ module.exports = {
             cacheName: 'api'
           }
         }
-      ]
+      ],
+      maximumFileSizeToCacheInBytes: 5000000
     })
   ],
   devServer: {

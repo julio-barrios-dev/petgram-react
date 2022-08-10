@@ -6,6 +6,7 @@ import { Home } from './pages/Home'
 import { Detail } from './pages/Detail'
 import { NavBar } from './components/NavBar'
 import { User } from './pages/User'
+import { Alert } from './components/Alert'
 // import { Favs } from './pages/Favs'
 import { NotRegisterUser } from './pages/NotRegisterUser'
 import { NotFound } from './pages/NotFound'
@@ -29,6 +30,7 @@ export const App = () => {
               <Route path='/NotRegisterUser' element={<NotRegisterUser />} />
               <Route path='*' element={<NotFound />} />
         </Routes>
+        <Alert />
         <NavBar />
       </BrowserRouter>
     </Suspense>

@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import Context from '../../Context'
 import PropTypes from 'prop-types'
 import { ImgWrapper, Img, Article } from './styles'
 import { useNearScreen } from '../../hooks/useNearScreen'
@@ -10,13 +11,19 @@ export const PhotoCard = ({ id, likes, src, liked } = {}) => {
   const [show, element] = useNearScreen()
   const { mutation } = useMutationToogleLike()
 
+  const { state: { isAuth }, onAlert } = useContext(Context)
+
   const showCard = () => {
-    const handleFavClick = () => {
-      mutation({
-        variables: {
-          input: { id }
-        }
-      })
+    const handleFavClick = async () => {
+      try {
+        await mutation({
+          variables: {
+            input: { id }
+          }
+        })
+      } catch (error) {
+        onAlert()
+      }
     }
     if (!show) {
       return null
