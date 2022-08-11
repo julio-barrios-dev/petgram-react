@@ -11,7 +11,7 @@ export const PhotoCard = ({ id, likes, src, liked } = {}) => {
   const [show, element] = useNearScreen()
   const { mutation } = useMutationToogleLike()
 
-  const { state: { isAuth }, onAlert } = useContext(Context)
+  const { state: { showAlert }, onAlert } = useContext(Context)
 
   const showCard = () => {
     const handleFavClick = async () => {

@@ -15,7 +15,7 @@ import Context from './Context'
 const Favs = React.lazy(() => import('./pages/Favs'))
 
 export const App = () => {
-  const { state: { isAuth } } = useContext(Context)
+  const { state: { isAuth, showAlert } } = useContext(Context)
   return (
     <Suspense fallback={<div />}>
       <BrowserRouter>
@@ -30,7 +30,7 @@ export const App = () => {
               <Route path='/NotRegisterUser' element={<NotRegisterUser />} />
               <Route path='*' element={<NotFound />} />
         </Routes>
-        <Alert />
+        {showAlert && <Alert />}
         <NavBar />
       </BrowserRouter>
     </Suspense>

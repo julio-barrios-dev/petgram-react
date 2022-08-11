@@ -29,8 +29,8 @@ export const useProvider = () => {
         }
       case 'ALERT':
         return {
-          showAlert: true,
-          ...state
+          ...state,
+          showAlert: !state.showAlert
 
         }
       default:

@@ -57,8 +57,8 @@ const ListOfCategoriesComponent = () => {
       {
         loading
           ? data.map((_, index) => <Item key={index} ><Category loading={true} /></Item>)
-          : data.map((category) =>
-          <Item key={category.id}><Category {...category} path={`/pet/${category.id}`}/></Item>)
+          : data.map((category, index) =>
+          <Item key={index}><Category {...category} path={`/pet/${category.id}`}/></Item>)
       }
       </List>
       <ButtonRight onClick={scrollFunctionRight} >

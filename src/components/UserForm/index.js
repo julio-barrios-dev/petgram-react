@@ -9,6 +9,7 @@ export const UseForm = ({ disabled, error, onSubmit, title }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+
     onSubmit({ email: email.value, password: password.value })
   }
 
