@@ -38,13 +38,7 @@ const ListOfCategoriesComponent = () => {
       const newShowFixed = window.scrollY > 200
       showFixed !== newShowFixed && setShowFixed(newShowFixed)
     }
-    // let isDown
     document.addEventListener('scroll', onScroll)
-    // list.addEventListener('mousedown', (e) => { isDown = true })
-    // list.addEventListener('mouseup', (e) => { isDown = false })
-    // list.current.addEventListener('mousemove' (e) => {
-
-    // } )
 
     return () => {
       document.removeEventListener('scroll', onScroll)

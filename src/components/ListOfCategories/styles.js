@@ -11,8 +11,6 @@ export const List = styled.ul`
   scroll-snap-type: x mandatory;
   width: 100%;
   margin: 30px 0;
-  cursor: -webkit-grab; 
-  cursor: grab;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -46,6 +44,7 @@ export const ButtonRight = styled.button`
   height: 100%;
   top: 0;
   right: 10px;
+  cursor: pointer;
 `
 export const ButtonLeft = styled.button`
   position: absolute;
@@ -54,4 +53,5 @@ export const ButtonLeft = styled.button`
   height: 100%;
   top: 0;
   left: 10px;
+  cursor: pointer;
 `
