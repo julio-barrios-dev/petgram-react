@@ -39,7 +39,6 @@ const ListOfCategoriesComponent = () => {
       showFixed !== newShowFixed && setShowFixed(newShowFixed)
     }
     document.addEventListener('scroll', onScroll)
-
     return () => {
       document.removeEventListener('scroll', onScroll)
     }
@@ -47,7 +46,7 @@ const ListOfCategoriesComponent = () => {
 
   const renderList = (fixed) => (
     <ContainerListCategory>
-      <List fixed={fixed} ref={list}>
+      <List fixed={fixed} ref={(!fixed && list) || null}>
       {
         loading
           ? data.map((_, index) => <Item key={index} ><Category loading={true} /></Item>)
